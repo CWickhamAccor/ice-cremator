@@ -9,4 +9,9 @@ module.exports = {
         port: '8081',
         endpoint: '/nlu',
     },
+    fridgeApi : {
+        url: 'http://localhost',
+        port: '8083',
+        endpoint: '/flavour',
+    },
 };

@@ -8,11 +8,13 @@ function getEntity(text, regex) {
 function getEntities(text) {
     const entities = {
         iceCream: [],
+        flavour: [],
         hello: [],
         goodBye: [],
     };
 
-    entities.iceCream.push(...getEntity(text, /strawberry|chocolate|vanilla|lemon|ice cream|sorbet/g));
+    entities.iceCream.push(...getEntity(text, /ice cream|sorbet/g));
+    entities.flavour.push(...getEntity(text, /strawberry|chocolate|vanilla|lemon|blueberry/g));
     entities.hello.push(...getEntity(text, /(hello|hi|hey) |good (morning|evening|afternoon)/g));
     entities.goodBye.push(...getEntity(text, /cya|good (bye|night)/g));
 
@@ -22,7 +24,7 @@ function getEntities(text) {
 function getIntent(text, entities) {
     let intent = 'fallback';
     const score = {
-        iceCream: entities.iceCream.length,
+        iceCream: entities.iceCream.length + entities.flavour.length,
         hello: entities.hello.length,
         goodBye: entities.goodBye.length,
     };
