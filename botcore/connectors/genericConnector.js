@@ -1,4 +1,5 @@
 const axios = require('axios');
+const logger = require('../../common/tools/logger');
 
 async function callAxios({ url, port, endpoint, method, data, headers }) {
     try {
@@ -30,7 +31,8 @@ async function callAxios({ url, port, endpoint, method, data, headers }) {
             errorModel.status = status;
         }
 
-        throw errorModel;
+        logger.error(errorModel);
+        return errorModel;
     }
 }
 

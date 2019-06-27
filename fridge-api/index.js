@@ -14,12 +14,14 @@ app.get('/flavour', (req, res) => {
 });
 
 app.get('/flavour/:flavour', (req, res) => {
-    logger.info(`${server} [GET] /flavour/stuff has been called !`);
+    const flavour = req.params.flavour;
+    logger.info(`${server} [GET] /flavour/${flavour} has been called !`);
     getFlavourService(req, res);
 });
 
 app.put('/flavour/:flavour', (req, res) => {
-    logger.info(`${server} [PUT] /flavour/stuff has been called !`);
+    const flavour = req.params.flavour;
+    logger.info(`${server} [PUT] /flavour/${flavour} has been called !`);
     updateFlavourService(req, res);
 });
 

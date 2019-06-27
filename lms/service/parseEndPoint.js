@@ -45,6 +45,12 @@ function getEntitiesScore(lmsEntities, reqEntities) {
             }
         }
     }
+    for (const entity in lmsEntities) {
+        if (!reqEntities[entity].length) {
+            logger.warn(`${lmsEntities}, ${lmsEntities[entity]}`);
+            score -= 1;
+        }
+    }
     return score;
 }
 
