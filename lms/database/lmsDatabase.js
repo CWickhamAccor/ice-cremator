@@ -20,21 +20,24 @@ const database = {
         {
             intent: 'iceCream',
             entities: {
-                iceCream: ['chocolate', 'ice cream'],
+                iceCream: ['ice cream'],
+                flavour: ['chocolate'],
             },
             output: 'Here is a chocolate Ice cream !',
         },
         {
             intent: 'iceCream',
             entities: {
-                iceCream: ['vanilla', 'ice cream'],
+                iceCream: ['ice cream'],
+                flavour: ['chocolate'],
             },
             output: 'Here is a vanilla Ice cream !',
         },
         {
             intent: 'iceCream',
             entities: {
-                iceCream: '*',
+                iceCream: ['ice cream', 'sorbet'],
+                flavour: '*',
             },
             output: 'We don\'t have this flavour, I can give you either Vanilla or Chocolate.',
         },
